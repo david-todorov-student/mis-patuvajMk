@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './baraj.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,50 +64,136 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.account_box_rounded))
-        ],
-      ),
-      body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Container(
-              child: ElevatedButton(
-                child: const Text(
-                  "Барај",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  textStyle: const TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            Container(
-              child: ElevatedButton(
-                child: const Text(
-                  "Понуди",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.orange,
-                  textStyle: const TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.account_box_rounded))
           ],
         ),
-      )),
-    );
+        body: new Stack(
+          children: <Widget>[
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage("assets/1.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            new Center(
+                // Center is a layout widget. It takes a single child and positions it
+                // in the middle of the parent.
+                child: Container(
+              child: Row(
+                //   image: AssetImage('assets/1.png'),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    child: ElevatedButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+                        crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+                        children: <Widget>[
+                          Text(
+                            "Барај",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Icon(
+                            Icons.search,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        textStyle: const TextStyle(color: Colors.white),
+                        minimumSize: const Size(140, 60),
+                        maximumSize: const Size(140, 60),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: ElevatedButton(
+                      child: const Text(
+                        "Понуди",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orange,
+                        textStyle: const TextStyle(color: Colors.white),
+                        minimumSize: const Size(140, 60),
+                        maximumSize: const Size(140, 60),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )),
+          ],
+        )
+
+        // body: Center(
+
+        //     // Center is a layout widget. It takes a single child and positions it
+        //     // in the middle of the parent.
+        //     child: Container(
+        //   decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //       image: AssetImage('assets/1.png'),
+        //       //    fit: BoxFit.fill,
+        //     ),
+        //   ),
+        //   child: Row(
+        //     //   image: AssetImage('assets/1.png'),
+        //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //     children: <Widget>[
+        //       Container(
+        //         child: ElevatedButton(
+        //           child: Row(
+        //             children: <Widget>[
+        //               Text(
+        //                 "Барај",
+        //                 style: TextStyle(color: Colors.white),
+        //               ),
+        //               Icon(
+        //                 Icons.search,
+        //                 color: Colors.white,
+        //                 size: 18,
+        //               ),
+        //             ],
+        //           ),
+        //           onPressed: () {
+        //             Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
+        //           },
+        //           style: ElevatedButton.styleFrom(
+        //             primary: Colors.black,
+        //             textStyle: const TextStyle(color: Colors.white),
+        //           ),
+        //         ),
+        //       ),
+        //       Container(
+        //         child: ElevatedButton(
+        //           child: const Text(
+        //             "Понуди",
+        //             style: TextStyle(color: Colors.white),
+        //           ),
+        //           onPressed: () {},
+        //           style: ElevatedButton.styleFrom(
+        //             primary: Colors.orange,
+        //             textStyle: const TextStyle(color: Colors.white),
+        //           ),
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // )),
+        );
   }
 }
