@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patuvaj_mk/ponudi.dart';
 import './baraj.dart';
+import './signin.dart';
 
 void main() {
   runApp(MyApp());
@@ -70,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
           actions: [
-            IconButton(
-                onPressed: () {}, icon: const Icon(Icons.account_box_rounded))
+            IconButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
+              }, icon: const Icon(Icons.account_box_rounded))
           ],
         ),
         body: Stack(

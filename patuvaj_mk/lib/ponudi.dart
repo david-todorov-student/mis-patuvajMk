@@ -290,7 +290,7 @@ class PonudiScreenState extends State<PonudiScreen> {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const Ponudi2Screen()));
                     },
-                    child: Text("Следно")
+                    child: const Text("Следно")
                 )
               ],
             ),
