@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './baraj.dart';
+import './signin.dart';
 
 void main() {
   runApp(MyApp());
@@ -69,7 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.account_box_rounded))
+            IconButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+              }, icon: Icon(Icons.account_box_rounded))
           ],
         ),
         body: new Stack(
