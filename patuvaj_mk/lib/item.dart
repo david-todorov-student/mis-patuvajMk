@@ -31,13 +31,13 @@ class MyAppp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Преглед'),
+        title: const Text('Преглед'),
         // leading: getBackButton(),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: RaisedButton(
-          padding: EdgeInsets.only(top: 23.0, bottom: 23.0),
+          padding: const EdgeInsets.only(top: 23.0, bottom: 23.0),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           onPressed: () {
             Navigator.push(
@@ -49,7 +49,7 @@ class MyAppp extends StatelessWidget {
           },
           color: Colors.black,
           textColor: Colors.white,
-          child: Text(
+          child: const Text(
             'Резервирај',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
@@ -57,129 +57,127 @@ class MyAppp extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
-          padding: new EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           children: [
             Card(
               color: Colors.grey[100],
               child: Padding(
                 padding: const EdgeInsets.all(0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Row(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
+                      crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
+                      children: const [
+                        Text(
+                          '10 Okt, 2021',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                      ],
+                    ),
+                    Row(
                         mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
                         crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
+
                         children: [
                           Text(
-                            '10 Okt, 2021',
-                            style: TextStyle(
+                            startTime,
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
-                            height: 10.0,
+                          Container(
+                            margin: const EdgeInsets.only(top: 8),
+                            width: 100,
+                            color: Colors.black54,
+                            height: 1,
                           ),
-                        ],
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
-                          crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
-
-                          children: [
-                            Text(
-                              startTime,
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          // const SizedBox(height: 4),
+                          Text(
+                            endTime,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 8),
-                              width: 100,
+                          ),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
+                        crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
+
+                        children: [
+                          Text(
+                            startDest,
+                            style: const TextStyle(
+                              fontSize: 16,
                               color: Colors.black54,
-                              height: 1,
                             ),
-                            // const SizedBox(height: 4),
-                            Text(
-                              endTime,
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ]),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
-                          crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
-
-                          children: [
-                            Text(
-                              startDest,
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                            //SizedBox(height: 100),
-                            Container(width: 100, color: Colors.transparent),
-                            Text(
-                              endDest,
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                          ]),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
-                          crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
-
-                          children: [
-                            Text(
-                              "08:00",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                            //SizedBox(height: 100),
-                            Container(width: 100, color: Colors.transparent),
-                            Text(
-                              "08:00",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                          ]),
-                      SizedBox(height: 30),
-                      Row(children: [
-                        Text(
-                          "Вкупна цена за x патници",
-                          style: TextStyle(
-                            fontSize: 16,
                           ),
-                        ),
-                        Spacer(),
-                        Text(
-                          "300 ден.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                          //SizedBox(height: 100),
+                          Container(width: 100, color: Colors.transparent),
+                          Text(
+                            endDest,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black54,
+                            ),
                           ),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically,
+                        crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally,
+
+                        children: [
+                          const Text(
+                            "08:00",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black54,
+                            ),
+                          ),
+                          //SizedBox(height: 100),
+                          Container(width: 100, color: Colors.transparent),
+                          const Text(
+                            "08:00",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(height: 30),
+                    Row(children: const [
+                      Text(
+                        "Вкупна цена за x патници",
+                        style: TextStyle(
+                          fontSize: 16,
                         ),
-                        //SizedBox(height: 100),
-                      ]),
-                    ],
-                  ),
+                      ),
+                      Spacer(),
+                      Text(
+                        "300 ден.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      //SizedBox(height: 100),
+                    ]),
+                  ],
                 ),
               ),
             ),
             // CarBlock(widget.car),
             // PickupInfoWidget(widget.car),
             // MapWidget(widget.car),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Padding(
@@ -199,30 +197,30 @@ class MyAppp extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         name,
-                        style: TextStyle(color: Colors.black, fontSize: 18),
+                        style: const TextStyle(color: Colors.black, fontSize: 18),
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(
+                          const Icon(
                             Icons.star,
                             color: Colors.grey,
                           ),
                           Text(
                             stars,
-                            style: TextStyle(color: Colors.grey),
+                            style: const TextStyle(color: Colors.grey),
                           ),
                         ],
                       ),
                     ],
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 33,
                     child: VerticalDivider(
                       color: Colors.grey,
@@ -237,32 +235,32 @@ class MyAppp extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "test".toUpperCase(),
-                        style: TextStyle(color: Colors.black, fontSize: 18),
+                        style: const TextStyle(color: Colors.black, fontSize: 18),
                       ),
-                      Text(
+                      const Text(
                         "test",
                         style: TextStyle(color: Colors.black, fontSize: 12),
                       )
                     ],
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    children: const <Widget>[
                       Icon(Icons.directions_car),
                     ],
                   ),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
 
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     'Преглед на локациите',
                     //     style: kButtonTextStyle,
@@ -275,7 +273,7 @@ class MyAppp extends StatelessWidget {
               child: FlatButton(
                 color: Colors.tealAccent[700],
                 textColor: Colors.white,
-                padding: EdgeInsets.only(top: 16.0, bottom: 16.0),
+                padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                 onPressed: () {
                   // Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -285,7 +283,7 @@ class MyAppp extends StatelessWidget {
                   //   );
                   // }));
                 },
-                child: Text(
+                child: const Text(
                   'Исконтактирај го превозникот',
                 ),
               ),

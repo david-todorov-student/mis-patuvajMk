@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './item.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: CardScreen(),
   ));
@@ -1017,7 +1017,7 @@ class CardScreenState extends State<CardScreen> {
                             Row(children: [
                               Text(
                                 Person.startTime,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1031,7 +1031,7 @@ class CardScreenState extends State<CardScreen> {
                               // const SizedBox(height: 4),
                               Text(
                                 Person.endTime,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1042,7 +1042,7 @@ class CardScreenState extends State<CardScreen> {
                             Row(children: [
                               Text(
                                 Person.startDest,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black54,
                                 ),
@@ -1051,7 +1051,7 @@ class CardScreenState extends State<CardScreen> {
                               Container(width: 100, color: Colors.transparent),
                               Text(
                                 Person.endDest,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black54,
                                 ),
@@ -1059,11 +1059,11 @@ class CardScreenState extends State<CardScreen> {
                               // const Text('Chelsea City'),
                               // const Text('Flutteria'),
                             ]),
-                            SizedBox(height: 30),
+                            const SizedBox(height: 30),
                             Row(children: [
                               Text(
                                 Person.price,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1084,7 +1084,7 @@ class CardScreenState extends State<CardScreen> {
                           children: [
                             Text(
                               Person.name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -1092,13 +1092,13 @@ class CardScreenState extends State<CardScreen> {
                             //  const SizedBox(height: 4),
                             Row(
                               children: <Widget>[
-                                Icon(
+                                const Icon(
                                   Icons.star,
                                   color: Colors.grey,
                                 ),
                                 Text(
                                   Person.numOfStars,
-                                  style: TextStyle(color: Colors.grey),
+                                  style: const TextStyle(color: Colors.grey),
                                 ),
                               ],
                             ),
@@ -1117,92 +1117,67 @@ class CardScreenState extends State<CardScreen> {
                             //     ),
                             const SizedBox(height: 10),
                             Row(
-                              children: <Widget>[
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0.0),
-                                    child: Tooltip(
-                                      message: 'Возам до барана дестинација',
-                                      child: Icon(
-                                        Icons.location_on,
-                                        color: Colors.grey,
-                                        size: 30.0,
-                                      ),
-                                    ), //Tooltip
-                                  ), //Padding
-                                  // color: Colors.green[50],
-                                  // width: 300,
-                                  // height: 175,
+                              children: const <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Tooltip(
+                                    message: 'Возам до барана дестинација',
+                                    child: Icon(
+                                      Icons.location_on,
+                                      color: Colors.grey,
+                                      size: 30.0,
+                                    ),
+                                  ), //Tooltip
                                 ), //Container
                                 SizedBox(width: 5),
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0.0),
-                                    child: Tooltip(
-                                      message: 'Дозволени се миленици',
-                                      child: Icon(
-                                        Icons.pets_rounded,
-                                        color: Colors.grey,
-                                        size: 30.0,
-                                      ),
-                                    ), //Tooltip
-                                  ), //Padding
-                                  // color: Colors.green[50],
-                                  // width: 300,
-                                  // height: 175,
+                                Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Tooltip(
+                                    message: 'Дозволени се миленици',
+                                    child: Icon(
+                                      Icons.pets_rounded,
+                                      color: Colors.grey,
+                                      size: 30.0,
+                                    ),
+                                  ), //Tooltip
                                 ),
                                 SizedBox(width: 5),
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0.0),
-                                    child: Tooltip(
-                                      message: 'Клима уред во возилото',
-                                      child: Icon(
-                                        Icons.ac_unit,
-                                        color: Colors.grey,
-                                        size: 30.0,
-                                      ),
-                                    ), //Tooltip
-                                  ), //Padding
-                                  // color: Colors.green[50],
-                                  // width: 300,
-                                  // height: 175,
+                                Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Tooltip(
+                                    message: 'Клима уред во возилото',
+                                    child: Icon(
+                                      Icons.ac_unit,
+                                      color: Colors.grey,
+                                      size: 30.0,
+                                    ),
+                                  ), //Tooltip
                                 ),
 
                                 SizedBox(width: 5),
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0.0),
-                                    child: Tooltip(
-                                      message: 'Имам простор за товар',
-                                      child: Icon(
-                                        Icons.luggage,
-                                        color: Colors.grey,
-                                        size: 30.0,
-                                      ),
-                                    ), //Tooltip
-                                  ), //Padding
-                                  // color: Colors.green[50],
-                                  // width: 300,
-                                  // height: 175,
+                                Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Tooltip(
+                                    message: 'Имам простор за товар',
+                                    child: Icon(
+                                      Icons.luggage,
+                                      color: Colors.grey,
+                                      size: 30.0,
+                                    ),
+                                  ), //Tooltip
                                 ),
 
                                 SizedBox(width: 5),
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0.0),
-                                    child: Tooltip(
-                                      message: 'Задолжително носење заштитна маска',
-                                      child: Icon(
-                                        Icons.masks,
-                                        color: Colors.grey,
-                                        size: 30.0,
-                                      ),
-                                    ), //Tooltip
-                                  ), //Padding
-                                  // color: Colors.green[50],
-                                  // width: 300,
-                                  // height: 175,
+                                Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Tooltip(
+                                    message: 'Задолжително носење заштитна маска',
+                                    child: Icon(
+                                      Icons.masks,
+                                      color: Colors.grey,
+                                      size: 30.0,
+                                    ),
+                                  ), //Tooltip
                                 ),
                               ],
                             ),
@@ -1226,7 +1201,7 @@ class CardScreenState extends State<CardScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('Резултати')),
       //  backgroundColor: Colors.grey[900],
-      body: new ListView(
+      body: ListView(
         // padding: new EdgeInsets.all(32.0),
         // child: new Center(
         //   child: Column(

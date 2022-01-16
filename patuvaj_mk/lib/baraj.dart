@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: NewScreen(),
   ));
@@ -25,6 +25,9 @@ class Item {
 }
 
 class NewScreen extends StatefulWidget {
+  const NewScreen({Key? key}) : super(key: key);
+
+  @override
   State createState() => NewScreenState();
 }
 
@@ -49,28 +52,29 @@ class NewScreenState extends State<NewScreen> {
 
   Future<void> _selectDate(BuildContext context) async {
     DateTime? picked = await showDatePicker(context: context, initialDate: selectedDate, firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
+    if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
       });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(title: Text('Барај')),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Барај')),
       body: Container(
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: new AssetImage("assets/bb.jpg"),
-            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: const AssetImage("assets/bb.jpg"),
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
             fit: BoxFit.cover,
           ),
         ),
         child:
             // Row(
             //   children: <Widget>[
-            new Form(
+            Form(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -85,13 +89,13 @@ class NewScreenState extends State<NewScreen> {
                 //     ),
                 //   ),),
                 // ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       icon: Icon(Icons.location_on, color: Colors.grey),
                       labelText: "Почетна дестинација...",
                     ),
@@ -100,7 +104,7 @@ class NewScreenState extends State<NewScreen> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 0.0, 64.0, 8.0),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       icon: Icon(Icons.location_on, color: Colors.grey),
                       labelText: "Крајна дестинација...",
                     ),
@@ -119,15 +123,15 @@ class NewScreenState extends State<NewScreen> {
                         // ),
                         child: Row(
                           children: <Widget>[
-                            Icon(
+                            const Icon(
                               Icons.date_range,
                               color: Colors.grey,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             Text(
-                              DateFormat.yMMMd().format(this.selectedDate),
+                              DateFormat.yMMMd().format(selectedDate),
                             ),
                           ],
                         ),
@@ -154,7 +158,7 @@ class NewScreenState extends State<NewScreen> {
 
                     // SfDateRangePicker(),
                     SizedBox.fromSize(
-                      size: Size(26, 26), // button width and height
+                      size: const Size(26, 26), // button width and height
                       child: ClipOval(
                         child: Material(
                           color: Colors.white, // button color
@@ -163,7 +167,7 @@ class NewScreenState extends State<NewScreen> {
                             onTap: () => _selectDate(context), // button pressed
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Icon(Icons.add_circle_outline), // icon
                               ],
                             ),
@@ -212,18 +216,18 @@ class NewScreenState extends State<NewScreen> {
                   padding: const EdgeInsets.fromLTRB(0.0, 10.0, 64.0, 5.0),
                   child: Row(
                     children: <Widget>[
-                      Icon(
+                      const Icon(
                         Icons.people_alt,
                         color: Colors.grey,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       DropdownButton<Item>(
                         underline: Container(
                           height: 2,
                         ),
-                        hint: Text("Патници"),
+                        hint: const Text("Патници"),
                         value: selectedUser,
                         onChanged: (Item? Value) {
                           setState(() {
@@ -235,7 +239,7 @@ class NewScreenState extends State<NewScreen> {
                             value: user,
                             child: Container(
                               width: 200, // Container child widget will get this width value
-                              //height: myHeghtValue, // C
+                              //height: myHeightValue, // C
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 user.name,
@@ -270,10 +274,10 @@ class NewScreenState extends State<NewScreen> {
                   color: Colors.black54,
                   height: 0.5,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 35,
                 ),
-                new SizedBox(
+                SizedBox(
                   width: 200.0,
                   height: 50.0,
                   child: ElevatedButton(
@@ -282,7 +286,7 @@ class NewScreenState extends State<NewScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => CardScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CardScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.black,
