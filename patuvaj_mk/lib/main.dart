@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightGreen,
       ),
       // A widget which will be started on application startup
-      home: const MyHomePage(title: 'Patuvaj MK'),
+      home: MyHomePage(title: 'Patuvaj MK'),
     );
   }
 }
@@ -71,133 +71,76 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
           actions: [
-            IconButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
-              }, icon: const Icon(Icons.account_box_rounded))
+            IconButton(onPressed: () {}, icon: Icon(Icons.account_box_rounded))
           ],
         ),
-        body: Stack(
+        body: new Stack(
           children: <Widget>[
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/1.png"),
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage("assets/1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Center(
+            new Center(
                 // Center is a layout widget. It takes a single child and positions it
                 // in the middle of the parent.
-                child: Row(
-              //   image: AssetImage('assets/1.png'),
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    //Center Row `contents horizontally,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    //Center Row contents vertically,
-                    children: const <Widget>[
-                      Text(
-                        "Барај",
+                child: Container(
+              child: Row(
+                //   image: AssetImage('assets/1.png'),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    child: ElevatedButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
+                        crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
+                        children: <Widget>[
+                          Text(
+                            "Барај",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Icon(
+                            Icons.search,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        textStyle: const TextStyle(color: Colors.white),
+                        minimumSize: const Size(140, 60),
+                        maximumSize: const Size(140, 60),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: ElevatedButton(
+                      child: const Text(
+                        "Понуди",
                         style: TextStyle(color: Colors.white),
                       ),
-                      Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 18,
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PonudiScreen()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orange,
+                        textStyle: const TextStyle(color: Colors.white),
+                        minimumSize: const Size(140, 60),
+                        maximumSize: const Size(140, 60),
                       ),
-                    ],
+                    ),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const NewScreen()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    textStyle: const TextStyle(color: Colors.white),
-                    minimumSize: const Size(140, 60),
-                    maximumSize: const Size(140, 60),
-                  ),
-                ),
-                ElevatedButton(
-                  child: const Text(
-                    "Понуди",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const PonudiScreen()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
-                    textStyle: const TextStyle(color: Colors.white),
-                    minimumSize: const Size(140, 60),
-                    maximumSize: const Size(140, 60),
-                  ),
-                ),
-              ],
+                ],
+              ),
             )),
           ],
-        )
-
-        // body: Center(
-
-        //     // Center is a layout widget. It takes a single child and positions it
-        //     // in the middle of the parent.
-        //     child: Container(
-        //   decoration: BoxDecoration(
-        //     image: DecorationImage(
-        //       image: AssetImage('assets/1.png'),
-        //       //    fit: BoxFit.fill,
-        //     ),
-        //   ),
-        //   child: Row(
-        //     //   image: AssetImage('assets/1.png'),
-        //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //     children: <Widget>[
-        //       Container(
-        //         child: ElevatedButton(
-        //           child: Row(
-        //             children: <Widget>[
-        //               Text(
-        //                 "Барај",
-        //                 style: TextStyle(color: Colors.white),
-        //               ),
-        //               Icon(
-        //                 Icons.search,
-        //                 color: Colors.white,
-        //                 size: 18,
-        //               ),
-        //             ],
-        //           ),
-        //           onPressed: () {
-        //             Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
-        //           },
-        //           style: ElevatedButton.styleFrom(
-        //             primary: Colors.black,
-        //             textStyle: const TextStyle(color: Colors.white),
-        //           ),
-        //         ),
-        //       ),
-        //       Container(
-        //         child: ElevatedButton(
-        //           child: const Text(
-        //             "Понуди",
-        //             style: TextStyle(color: Colors.white),
-        //           ),
-        //           onPressed: () {},
-        //           style: ElevatedButton.styleFrom(
-        //             primary: Colors.orange,
-        //             textStyle: const TextStyle(color: Colors.white),
-        //           ),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // )),
-        );
+        ));
   }
 }
