@@ -29,11 +29,7 @@ class PonudiScreenState extends State<PonudiScreen> {
   TimeOfDay? selectedBackTime = TimeOfDay.now();
 
   Future<void> _selectStartDate(BuildContext context) async {
-    DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: selectedStartDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
+    DateTime? picked = await showDatePicker(context: context, initialDate: selectedStartDate, firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
     if (picked != null && picked != selectedStartDate) {
       setState(() {
         selectedStartDate = picked;
@@ -42,8 +38,7 @@ class PonudiScreenState extends State<PonudiScreen> {
   }
 
   Future<void> _selectStartTime(BuildContext context) async {
-    TimeOfDay? picked =
-        await showTimePicker(context: context, initialTime: selectedStartTime);
+    TimeOfDay? picked = await showTimePicker(context: context, initialTime: selectedStartTime);
     if (picked != null && picked != selectedStartTime) {
       setState(() {
         selectedStartTime = picked;
@@ -52,11 +47,7 @@ class PonudiScreenState extends State<PonudiScreen> {
   }
 
   Future<void> _selectBackDate(BuildContext context) async {
-    DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
+    DateTime? picked = await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2015, 8), lastDate: DateTime(2101));
     if (picked != null && picked != selectedBackDate) {
       setState(() {
         selectedBackDate = picked;
@@ -65,8 +56,7 @@ class PonudiScreenState extends State<PonudiScreen> {
   }
 
   Future<void> _selectBackTime(BuildContext context) async {
-    TimeOfDay? picked =
-        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    TimeOfDay? picked = await showTimePicker(context: context, initialTime: TimeOfDay.now());
     if (picked != null && picked != selectedBackTime) {
       setState(() {
         selectedBackTime = picked;
@@ -84,8 +74,7 @@ class PonudiScreenState extends State<PonudiScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: const AssetImage("assets/bb.jpg"),
-            colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.3), BlendMode.dstATop),
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
             fit: BoxFit.cover,
           ),
         ),
@@ -107,8 +96,6 @@ class PonudiScreenState extends State<PonudiScreen> {
                     },
                   ),
                   const Text("Во еден правец"),
-                ]),
-                Row(children: [
                   Radio(
                     value: "twoWay",
                     groupValue: typeOfTransport,
@@ -120,6 +107,9 @@ class PonudiScreenState extends State<PonudiScreen> {
                   ),
                   const Text("Повратно"),
                 ]),
+                // Row(children: [
+
+                // ]),
                 const SizedBox(
                   height: 20,
                 ),
@@ -201,8 +191,7 @@ class PonudiScreenState extends State<PonudiScreen> {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
                         child: Row(
                           children: <Widget>[
                             FlatButton(
@@ -228,8 +217,7 @@ class PonudiScreenState extends State<PonudiScreen> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
                         child: Row(
                           children: <Widget>[
                             FlatButton(
@@ -260,8 +248,7 @@ class PonudiScreenState extends State<PonudiScreen> {
                       hintText: 'Патници',
                       contentPadding: EdgeInsets.all(8),
                       isDense: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                     ),
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
@@ -276,8 +263,7 @@ class PonudiScreenState extends State<PonudiScreen> {
                       hintText: 'Цена',
                       contentPadding: EdgeInsets.all(8),
                       isDense: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                     ),
                     keyboardType: TextInputType.number,
                     inputFormatters: <TextInputFormatter>[
@@ -287,11 +273,9 @@ class PonudiScreenState extends State<PonudiScreen> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const Ponudi2Screen()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Ponudi2Screen()));
                     },
-                    child: const Text("Следно")
-                )
+                    child: const Text("Следно"))
               ],
             ),
           ),
